@@ -1,3 +1,5 @@
+#include "../views/headers/views.h"
+
 /*This file will be generated at build
 time and will contain route definitions
 for all the static files publicly 
@@ -9,5 +11,5 @@ if this file has no route for a given path, a 404 response will be given from he
 */
 
 int static_routes() {
-    return 1;
+    return render_404();
 }

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "../server/headers/kernel.h"
 #include "../server/headers/http.h"
-#include "../views/headers/index.html.h"
+#include "../views/headers/views.h"
 #include "headers/static-routes.h"
 
 /*
@@ -19,7 +19,7 @@ int route() {
 	//Log reuests to the terminal
     printf("%s: %s\n", HTTP_header.method, HTTP_header.path);
 
-    if (isroute("GET", "/")) return render_index0html();
+    if (isroute("GET", "/")) return render_index();
 
-    return static_routes();
+    else return static_routes();
 }
