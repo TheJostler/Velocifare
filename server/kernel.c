@@ -24,7 +24,6 @@ char *page[] = {
 	"\r\n",
 };
 
-
 int put(char *string, int soc) {
         int size = strlen(string);
         return write(soc, string, size);
