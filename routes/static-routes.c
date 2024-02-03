@@ -9,5 +9,5 @@ if this file has no route for a given path, a 404 response will be given from he
 */
 
 int static_routes() {
-    return 0;
+    return 1;
 }

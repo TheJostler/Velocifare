@@ -1,2 +1,2 @@
 
-void render_index0html(int soc);
+int render_index0html(int soc);

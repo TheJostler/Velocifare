@@ -15,7 +15,7 @@ echo "
 #include \"../server/headers/network.h\"
 #include \"../server/headers/kernel.h\"
 
-void $function_name(int soc) {
+int $function_name(int soc) {
 	char *page[] = {
 	" > $output_file
 # Read each line from input file, add backslash before double quotes, wrap with double quotes, and write to output file
