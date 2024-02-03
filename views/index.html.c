@@ -52,7 +52,7 @@ int render_index() {
 		"</html>",
 	};
 for (int l=0; l<(sizeof(page)/sizeof(page[0])); l++) {
-	put(page[l], peer);
+	put(page[l]);
 }
 return 0;
 }
