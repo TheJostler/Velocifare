@@ -1,6 +1,7 @@
 name=sic
 dest=/usr/bin
 cc=gcc
+flags=-Ofast
 build = build
 build.mkdir = if [ ! -d $(build) ];then mkdir $(build);fi
 objects = $(build)/obj
@@ -34,10 +35,10 @@ $(objects)/%.o: %.c
 	@$(routes.mkdir)
 	@$(controllers.mkdir)
 	@$(middleware.mkdir)
-	$(cc) -c -o $@ $<
+	$(cc) $(flags) -c -o $@ $<
 
 $(name): $(server.o) $(views.o) $(routes.o) $(controllers.o) $(middleware.o)
-	$(cc) -o $@ $^ 
+	$(cc) $(flags) -o $@ $^ 
 	@make image
 
 image:

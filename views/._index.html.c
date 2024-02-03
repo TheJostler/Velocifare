@@ -1,0 +1,58 @@
+
+    #include <unistd.h>
+    #include "../server/headers/network.h"
+    #include "../server/headers/kernel.h"
+
+    int __index_html() {
+        char *page[] = {
+        
+		"<!doctype html>",
+		"<html lang=\"en\">",
+		"	<head>",
+		"		<meta charset=\"utf-8\" />",
+		"		<link rel=\"icon\" href=\"./favicon.png\" />",
+		"		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />",
+		"		",
+		"		<link rel=\"modulepreload\" href=\"./_app/immutable/entry/start.4AsR4VTF.js\">",
+		"		<link rel=\"modulepreload\" href=\"./_app/immutable/chunks/entry.eMxFEJD6.js\">",
+		"		<link rel=\"modulepreload\" href=\"./_app/immutable/chunks/scheduler.zMJaRgub.js\">",
+		"		<link rel=\"modulepreload\" href=\"./_app/immutable/entry/app.tVVbNdpz.js\">",
+		"		<link rel=\"modulepreload\" href=\"./_app/immutable/chunks/index.ZLPrqq-8.js\">",
+		"		<link rel=\"modulepreload\" href=\"./_app/immutable/nodes/0.8MofA74a.js\">",
+		"		<link rel=\"modulepreload\" href=\"./_app/immutable/nodes/2.bVWEJjcs.js\">",
+		"	</head>",
+		"	<body data-sveltekit-preload-data=\"hover\">",
+		"		<div>  <h1 data-svelte-h=\"svelte-15pgwlj\">Welcome to Site in C Feat. Svelte</h1> <p data-svelte-h=\"svelte-td5yc3\">This site is a working static Svelte app that is compiled by SiteInC</p> <p data-svelte-h=\"svelte-1gcp1ig\">Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p> <p data-svelte-h=\"svelte-jl9sbz\">Visit <a href=\"https://kit.svelte.dev\">kit.svelte.dev</a> to read the documentation</p> ",
+		"			",
+		"			<script>",
+		"				{",
+		"					__sveltekit_1o19c2f = {",
+		"						base: new URL(\".\", location).pathname.slice(0, -1)",
+		"					};",
+		"",
+		"					const element = document.currentScript.parentElement;",
+		"",
+		"					const data = [null,null];",
+		"",
+		"					Promise.all([",
+		"						import(\"./_app/immutable/entry/start.4AsR4VTF.js\"),",
+		"						import(\"./_app/immutable/entry/app.tVVbNdpz.js\")",
+		"					]).then(([kit, app]) => {",
+		"						kit.start(app, element, {",
+		"							node_ids: [0, 2],",
+		"							data,",
+		"							form: null,",
+		"							error: null",
+		"						});",
+		"					});",
+		"				}",
+		"			</script>",
+		"		</div>",
+		"	</body>",
+		"</html>",
+	};
+    for (int l=0; l<(sizeof(page)/sizeof(page[0])); l++) {
+        put(page[l], peer);
+    }
+    return 0;
+    }
