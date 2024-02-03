@@ -13,9 +13,6 @@ int put(char *string) {
 // here we need to start the http parser
 // at the moment it ignored the http packet entirely and replies with the homepage lol
 int next(int peer) {
-	for (int l=0; l<(sizeof(http)/sizeof(http[0])); l++) {
-		if (! put(http[l])) return 1;
-	}
         char packet[1024];
         read(peer, packet, sizeof(packet));
         http_parse(packet);
