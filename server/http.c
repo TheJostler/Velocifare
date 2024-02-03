@@ -41,7 +41,7 @@ int http_parse(char *packet) {
 
 int http_respond() {
     char *http1;
-    sprintf(http1, "HTTP/%f %i\r\n", 1.1, http_status);
+    snprintf(http1, 14, "HTTP/%f %i\r\n", 1.1, http_status);
     put(http1);
     put("Host: siteinc.tego\r\n");
     put("\r\n");
