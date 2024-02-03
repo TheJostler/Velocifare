@@ -34,7 +34,7 @@ do
     # Add the final part
     echo "	};
     for (int l=0; l<(sizeof(page)/sizeof(page[0])); l++) {
-        put(page[l], peer);
+        put(page[l]);
     }
     return 0;
     }" >> $output_file

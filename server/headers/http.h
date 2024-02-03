@@ -3,5 +3,7 @@ struct http_header{
 };
 
 extern struct http_header HTTP_header;
+extern int http_status;
 
 int http_parse(char *packet);
+int http_respond();

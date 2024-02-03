@@ -1,12 +1,17 @@
 #include <string.h>
 #include <unistd.h>
+#include <stdio.h>
+#include "headers/kernel.h"
 
 // Define data structures for the application:
 struct http_header{
     char *method, *path, *protocol;
 };
 
+// This struct contains the HTTP request header information and makes it available globally
 struct http_header HTTP_header;
+// This int contain the HTTP Response Status code and is available globally(200 by default)
+int http_status = 200;
 
 int http_parse(char *packet) {
 
@@ -32,4 +37,12 @@ int http_parse(char *packet) {
         }
     }
     return 0;
+}
+
+int http_respond() {
+    char *http1;
+    sprintf(http1, "HTTP/%f %i\r\n", 1.1, http_status);
+    put(http1);
+    put("Host: siteinc.tego\r\n");
+    put("\r\n");
 }
