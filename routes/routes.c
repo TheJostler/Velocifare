@@ -18,7 +18,7 @@ int route() {
 	//Log reuests to the terminal
     printf("%s: %s\n", HTTP_header.method, HTTP_header.path);
 
-    if (isroute("GET", "/")) render_index0html(peer);
+    if (isroute("GET", "/")) render_index0html();
 
     return 0;
 }
