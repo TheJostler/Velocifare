@@ -45,4 +45,5 @@ int http_respond() {
     put(http1);
     put("Host: siteinc.tego\r\n");
     put("\r\n");
+    return 0;
 }
