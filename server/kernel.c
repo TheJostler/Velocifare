@@ -3,7 +3,6 @@
 #include "headers/http.h"
 #include "headers/network.h"
 #include "../routes/headers/routes.h"
-#include "../views/headers/index.html.h"
 
 char *http[] = {
         "HTTP/1.1 200\r\n",
