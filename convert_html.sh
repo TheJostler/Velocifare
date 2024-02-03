@@ -6,9 +6,9 @@ find site/build -name *.js -o -name *.html -o -name *.css | while read f
 do
     # Input and output file paths
     input_file="$dir/$f"
-    output_file="views/$f.c"
-    header_file="views/headers/$f.h"
-    function_name=$(echo ${f//./_})
+    output_file="views/${f///_}.c"
+    header_file="views/headers/${f///_}.h"
+    function_name=$(echo ${f////_})
 
     echo "
     #include <unistd.h>
