@@ -7,10 +7,12 @@ find . -name *.js -o -name *.html -o -name *.css | while read f
 do
     # Input and output file paths
     input_file="$f"
-    output_file="../../views/${f////_}.c"
-    header_file="../../views/headers/${f////_}.h"
-    tmp=$(echo ${f////_})
-    function_name=$(echo ${tmp//./_})
+    no_slash="$(echo ${f////_})"
+    no_dot="$(echo ${no_slash//./_})"
+    output_file="../../views/static/$no_slash.c"
+    header_file="../../views/static/headers/views.h"
+    function_name=render_$no_dot
+    path=$(echo $f | tail -c +2)
 
     echo "
     #include <unistd.h>
@@ -38,5 +40,5 @@ do
     }" >> $output_file
 
     echo "
-    void $function_name();" > $header_file
+    void $function_name();" >> $header_file
 done
