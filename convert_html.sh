@@ -7,8 +7,8 @@ find . -name *.js -o -name *.html -o -name *.css | while read f
 do
     # Input and output file paths
     input_file="$f"
-    output_file="../../views/${f///_}.c"
-    header_file="../../views/headers/${f///_}.h"
+    output_file="../../views/${f////_}.c"
+    header_file="../../views/headers/${f////_}.h"
     function_name=$(echo ${f////_})
 
     echo "
