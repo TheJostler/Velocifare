@@ -10,15 +10,13 @@ as an argument and calls a funtion depending on ths path.
 
 this file contains the User's defined routes
 */
+int isroute(char *method, char *route) {
+    return (strcmp(HTTP_header.path, route) == 0) && (strcmp(HTTP_header.method, method) == 0);
+}
 
 int route() {
 	//Log reuests to the terminal
     printf("%s: %s\n", HTTP_header.method, HTTP_header.path);
 
-    switch (HTTP_header.path) {
-        case "/":
-            return render_index0html(peer);
-        default:
-            return static_routes();
-    }
+    if isroute("/") printf("Success!");
 }
