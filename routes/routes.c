@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <stdio.h>
+#include <string.h>
 #include "../server/headers/kernel.h"
 #include "../server/headers/http.h"
 #include "../views/headers/views.h"
