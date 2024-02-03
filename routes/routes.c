@@ -3,6 +3,7 @@
 #include "../server/headers/kernel.h"
 #include "../server/headers/http.h"
 #include "../views/headers/index.html.h"
+#include "headers/static-routes.h"
 
 /*
 this is a switch case that takes a path
@@ -18,7 +19,7 @@ int route() {
 	//Log reuests to the terminal
     printf("%s: %s\n", HTTP_header.method, HTTP_header.path);
 
-    if (isroute("GET", "/")) render_index0html();
+    if (isroute("GET", "/")) return render_index0html();
 
-    return 0;
+    return static_routes();
 }
