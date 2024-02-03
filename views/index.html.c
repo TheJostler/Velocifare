@@ -54,4 +54,5 @@ int render_index0html() {
 for (int l=0; l<(sizeof(page)/sizeof(page[0])); l++) {
 	put(page[l], peer);
 }
+return 0;
 }
