@@ -1,5 +1,5 @@
 #ifndef ROUTES
 #define ROUTES
 
-int routes();
+int route();
 #endif
