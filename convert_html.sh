@@ -9,7 +9,7 @@ do
     input_file="$f"
     output_file="../../views/${f////_}.c"
     header_file="../../views/headers/${f////_}.h"
-    function_name=$(echo ${f////_})
+    function_name=$(echo ${echo ${f////_}//./_})
 
     echo "
     #include <unistd.h>
