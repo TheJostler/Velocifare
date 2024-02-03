@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include "../server/headers/http.h"
 
 /*
 this is a switch case that takes a path
