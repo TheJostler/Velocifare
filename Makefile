@@ -14,6 +14,15 @@ server.mkdir = if [ ! -d $(objects)/server ];then mkdir $(objects)/server;fi
 views = $(wildcard views/*.c)
 views.o = $(patsubst %.c, $(objects)/%.o, $(views))
 views.mkdir = if [ ! -d $(objects)/views ];then mkdir $(objects)/views;fi
+routes = $(wildcard routes/*.c)
+routes.o = $(patsubst %.c, $(objects)/%.o, $(routes))
+routes.mkdir = if [ ! -d $(objects)/routes ];then mkdir $(objects)/routes;fi
+controllers = $(wildcard controllers/*.c)
+controllers.o = $(patsubst %.c, $(objects)/%.o, $(controllers))
+controllers.mkdir = if [ ! -d $(objects)/controllers ];then mkdir $(objects)/controllers;fi
+middleware = $(wildcard middleware/*.c)
+middleware.o = $(patsubst %.c, $(objects)/%.o, $(middleware))
+middleware.mkdir = if [ ! -d $(objects)/middleware ];then mkdir $(objects)/middleware;fi
 images := $(wildcard $(media)/*.jpg)
 images.b64 = $(patsubst %.jpg, $(media.o)/%.jpg.b64, $(images))
 
@@ -22,9 +31,12 @@ $(objects)/%.o: %.c
 	@$(objects.mkdir)
 	@$(server.mkdir)
 	@$(views.mkdir)
+	@$(routes.mkdir)
+	@$(controllers.mkdir)
+	@$(middleware.mkdir)
 	$(cc) -c -o $@ $<
 
-$(name): $(server.o) $(views.o)
+$(name): $(server.o) $(views.o) $(routes.o) $(controllers.o) $(middleware.o)
 	$(cc) -o $@ $^ 
 	@make image
 
