@@ -19,4 +19,6 @@ int route() {
     printf("%s: %s\n", HTTP_header.method, HTTP_header.path);
 
     if (isroute("GET", "/")) printf("Success!");
+
+    return 0;
 }
