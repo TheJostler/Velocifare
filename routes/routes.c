@@ -18,5 +18,5 @@ int route() {
 	//Log reuests to the terminal
     printf("%s: %s\n", HTTP_header.method, HTTP_header.path);
 
-    if isroute("/") printf("Success!");
+    if (isroute("/")) printf("Success!");
 }
