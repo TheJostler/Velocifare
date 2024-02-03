@@ -3,7 +3,7 @@
 #include "../server/headers/network.h"
 #include "../server/headers/kernel.h"
 
-int render_index0html(int soc) {
+int render_index0html() {
 	char *page[] = {
 	
 		"<!doctype html>",

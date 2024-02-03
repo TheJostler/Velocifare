@@ -15,7 +15,7 @@ echo "
 #include \"../server/headers/network.h\"
 #include \"../server/headers/kernel.h\"
 
-int $function_name(int soc) {
+int $function_name() {
 	char *page[] = {
 	" > $output_file
 # Read each line from input file, add backslash before double quotes, wrap with double quotes, and write to output file
@@ -35,5 +35,5 @@ for (int l=0; l<(sizeof(page)/sizeof(page[0])); l++) {
 }" >> $output_file
 
 echo "
-void $function_name(int soc);" > $header_file
+void $function_name();" > $header_file
 
