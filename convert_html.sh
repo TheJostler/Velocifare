@@ -2,12 +2,13 @@
 
 dir="site/build"
 
-find site/build -name *.js -o -name *.html -o -name *.css | while read f
+cd $dir
+find . -name *.js -o -name *.html -o -name *.css | while read f
 do
     # Input and output file paths
-    input_file="$dir/$f"
-    output_file="views/${f///_}.c"
-    header_file="views/headers/${f///_}.h"
+    input_file="$f"
+    output_file="../../views/${f///_}.c"
+    header_file="../../views/headers/${f///_}.h"
     function_name=$(echo ${f////_})
 
     echo "
