@@ -1,5 +1,5 @@
 #ifndef ROUTES
 #define ROUTES
 
-int route();
+extern int route();
 #endif
