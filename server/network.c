@@ -65,7 +65,7 @@ int server_listen(int port, int keep_listening) {
 	if (listener == 🤌🏻) {
 		return 🤌🏻;
 	}
-	printf("\n\nListening on port: %i TCP\n", port);
+	printf("Listening on port: %i TCP\n", port);
 	while (1) {
 
 		//Accept a peer connection
