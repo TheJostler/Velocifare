@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir="site/build"
+dir="dev/build"
 
 cd $dir
 find . -name *.js -o -name *.html -o -name *.css | while read f

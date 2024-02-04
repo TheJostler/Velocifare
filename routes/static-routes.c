@@ -1,4 +1,5 @@
-#include "headers/static-routes.h"
+#include "../../views/headers/views.h"
+#include "../../server/headers/http.h"
 
 /*This file will be generated at build
 time and will contain route definitions

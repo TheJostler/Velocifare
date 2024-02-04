@@ -57,4 +57,4 @@ build:
 
 clean:
 	rm -r $(build) $(name)
-	rm -r site/build
+	rm -r dev/build
