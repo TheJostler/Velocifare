@@ -11,6 +11,6 @@ if this file has no route for a given path, a 404 response will be given from he
 */
 
 int static_routes() {
-    http_status = 400;
+    http_status = 404;
     return render_404();
 }
