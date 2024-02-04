@@ -12,12 +12,15 @@ find . -name *.js -o -name *.html -o -name *.css | while read f
 do
     # Input and output file paths
     input_file="$f"
-    no_slash="$(echo ${f////_})"
-    no_dot="$(echo ${no_slash//./_})"
-    output_file="../../views/static/$no_slash.c"
+    path=$(echo $f | tail -c +2)
+    no_slash="$(echo ${path////_})"
+    no_slash_dash="$(echo ${no_slash//-/_})"
+    no_dot="$(echo ${no_slash_dash//./_})"
+    output_file="../../views/static/$no_slash_dash.c"
     header_file="../../views/static/headers/views.h"
     function_name=render_$no_dot
-    path=$(echo $f | tail -c +2)
+
+    echo "" > $header_file
 
     echo "
     #include <unistd.h>
