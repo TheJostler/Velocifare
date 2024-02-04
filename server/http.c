@@ -40,7 +40,7 @@ int http_parse(char *packet) {
 }
 
 int http_respond() {
-    char *http1;
+    char http1[8];
     snprintf(http1, 8, "HTTP/%s %i\r\n", "1.1", http_status);
     put(http1);
     printf("%li", sizeof(http1));
