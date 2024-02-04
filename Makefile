@@ -47,7 +47,7 @@ image:
 	@for file in $(images); do if [ ! -f $(build)/$$file.b64 ];then cat $$file | base64 > $(build)/$$file.b64; echo Encoded: $$file;fi;done
 
 js:
-	@npm run build --prefix site	
+	@npm run build --prefix dev
 	@./convert_html.sh index.html render_index0html
 
 build:
