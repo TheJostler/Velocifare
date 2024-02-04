@@ -3,6 +3,10 @@
 dir="dev/build"
 
 cd $dir
+if [ ! -d ../../views/static ]
+then
+    mkdir ../../views/static
+fi
 find . -name *.js -o -name *.html -o -name *.css | while read f
 do
     # Input and output file paths
