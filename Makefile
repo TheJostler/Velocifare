@@ -48,7 +48,7 @@ image:
 
 js:
 	@npm run build --prefix dev
-	@./convert_html.sh
+	@./configure.sh
 
 build:
 	@make image
