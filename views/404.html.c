@@ -51,8 +51,6 @@ int render_404() {
 		"	</body>",
 		"</html>",
 	};
-for (int l=0; l<(sizeof(page)/sizeof(page[0])); l++) {
-	put(page[l]);
-}
-return 0;
+	int n = sizeof(page)/sizeof(page[0]);
+	return put(page, n);
 }
