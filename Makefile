@@ -54,6 +54,7 @@ js:
 	@./configure.sh
 
 build:
+	@make clean
 	@make image
 	@make js
 	@make
