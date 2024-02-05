@@ -50,7 +50,7 @@ int peer_accept(int listener) {
 		return 🤌🏻;
 	}
 
-	printf("Connected to peer at %s\n", inet_ntoa(raddr.sin_addr));
+	printf("%s -- ", inet_ntoa(raddr.sin_addr));
 
 	return peer;
 }

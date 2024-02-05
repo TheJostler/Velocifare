@@ -3,6 +3,9 @@
 #This is the directory that contains your html, js, and css files
 dir="dev/build"
 
+echo "== Compiling your project =="
+echo ""
+
 r="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 cd $dir
 if [ ! -d $r/views/static ]
@@ -39,6 +42,8 @@ do
     output_file="$r/views/static/$no_slash_dash.c"
     function_name=render_$no_dot
 
+    printf "\rCompiling - $path"
+
     echo "
     #include <unistd.h>
     #include \"../../server/headers/network.h\"
@@ -68,3 +73,5 @@ done
 
 # Finalize the the static routes file
 echo "http_status = 404;return render_404();}" >> $static_routes
+
+printf "\rCompiling - done\n"
