@@ -6,6 +6,14 @@ dir="dev/build"
 echo "== Compiling your project =="
 echo ""
 
+function clearline {
+	printf "\r"
+	for i in {1..`tput cols`}
+	do
+		printf ' '
+	done
+}
+
 r="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 cd $dir
 if [ ! -d $r/views/static ]
@@ -42,6 +50,7 @@ do
     output_file="$r/views/static/$no_slash_dash.c"
     function_name=render_$no_dot
 
+    clearline
     printf "\rCompiling - $path"
 
     echo "
@@ -74,4 +83,5 @@ done
 # Finalize the the static routes file
 echo "http_status = 404;return render_404();}" >> $static_routes
 
+clearline
 printf "\rCompiling - done\n"
