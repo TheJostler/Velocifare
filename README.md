@@ -8,7 +8,7 @@ SiteInC is a C framework designed to empower web developers to build static webs
 
 ## Features
 
-- **Efficiency:** By compiling the website into a single binary executable, SiteInC reduces overhead and enhances performance.
+- **Efficiency:** By compiling the website into a single binary executable, SiteInC aims to reduce overhead and enhance performance.
 - **Minimalism:** The framework is designed with minimalism in mind, providing only the essential features needed for building static websites.
 - **Speed:** With a focus on speed, SiteInC enables rapid development and deployment of web applications.
 - **Integration:** Developers can integrate their favorite front-end JavaScript frameworks, as long as they pre-render all their code. The compiler seamlessly includes them into the web server itself.
