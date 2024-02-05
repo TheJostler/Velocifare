@@ -1,5 +1,4 @@
 name=sic
-dest=/usr/bin
 cc=gcc
 flags=-Ofast
 build = build
@@ -15,6 +14,9 @@ server.mkdir = if [ ! -d $(objects)/server ];then mkdir $(objects)/server;fi
 views = $(wildcard views/*.c)
 views.o = $(patsubst %.c, $(objects)/%.o, $(views))
 views.mkdir = if [ ! -d $(objects)/views ];then mkdir $(objects)/views;fi
+static = $(wildcard views/static/*.c)
+static.o = $(patsubst %.c, $(objects)/%.o, $(static))
+static.mkdir = if [ ! -d $(objects)/views/static ];then mkdir $(objects)/views/static;fi
 routes = $(wildcard routes/*.c)
 routes.o = $(patsubst %.c, $(objects)/%.o, $(routes))
 routes.mkdir = if [ ! -d $(objects)/routes ];then mkdir $(objects)/routes;fi
@@ -32,12 +34,13 @@ $(objects)/%.o: %.c
 	@$(objects.mkdir)
 	@$(server.mkdir)
 	@$(views.mkdir)
+	@$(static.mkdir)
 	@$(routes.mkdir)
 	@$(controllers.mkdir)
 	@$(middleware.mkdir)
 	$(cc) $(flags) -c -o $@ $<
 
-$(name): $(server.o) $(views.o) $(routes.o) $(controllers.o) $(middleware.o)
+$(name): $(server.o) $(views.o) $(static.o) $(routes.o) $(controllers.o) $(middleware.o)
 	$(cc) $(flags) -o $@ $^ 
 	@make image
 

@@ -1,17 +1,10 @@
+
+#include "../views/static/headers/views.h"
 #include "../views/headers/views.h"
 #include "../server/headers/http.h"
 
-/*This file will be generated at build
-time and will contain route definitions
-for all the static files publicly 
-available. it will work the same way as
-the user defined routes and will be called by the default switch case in the
-routes.c file.
-
-if this file has no route for a given path, a 404 response will be given from here.
-*/
+// This file was generated at build time by the ./configure.sh script
 
 int static_routes() {
-    http_status = 404;
-    return render_404();
-}
+
+http_status = 404;return render_404();}
