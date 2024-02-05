@@ -2,21 +2,21 @@ Great! Here's a sample README.md for your project:
 
 ---
 
-# StaticWebFramework
+# SiteInC
 
-StaticWebFramework is a C framework designed to empower web developers to build static websites and compile them into a single binary executable, bundled along with a lightweight web server. The goal is to enhance the speed and efficiency of web applications, making them more scalable and cost-effective.
+SiteInC is a C framework designed to empower web developers to build static websites and compile them into a single binary executable, bundled along with a lightweight web server. The goal is to enhance the speed and efficiency of web applications, making them more scalable and cost-effective.
 
 ## Features
 
-- **Efficiency:** By compiling the website into a single binary executable, StaticWebFramework reduces overhead and enhances performance.
+- **Efficiency:** By compiling the website into a single binary executable, SiteInC aims to reduce overhead and enhance performance.
 - **Minimalism:** The framework is designed with minimalism in mind, providing only the essential features needed for building static websites.
-- **Speed:** With a focus on speed, StaticWebFramework enables rapid development and deployment of web applications.
+- **Speed:** With a focus on speed, SiteInC enables rapid development and deployment of web applications.
 - **Integration:** Developers can integrate their favorite front-end JavaScript frameworks, as long as they pre-render all their code. The compiler seamlessly includes them into the web server itself.
 - **Demo:** Check out our demo site, showcasing a pre-rendered Svelte app.
 
 ## Getting Started
 
-To get started with StaticWebFramework, follow these steps:
+To get started with SiteInC, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/TheJostler/siteinc`
 2. Navigate to the project directory: `cd siteinc`
@@ -25,16 +25,16 @@ To get started with StaticWebFramework, follow these steps:
 
 ## Usage
 
-StaticWebFramework follows a simple workflow:
+SiteInC follows a simple workflow:
 
 1. **Development:** Build your static website using your preferred front-end frameworks.
 2. **Pre-rendering:** Ensure all code is pre-rendered to enable seamless integration with the framework.
-3. **Compilation:** Compile your website into a single binary executable using StaticWebFramework.
+3. **Compilation:** Compile your website into a single binary executable using SiteInC.
 4. **Deployment:** Deploy the compiled executable along with the bundled web server to your hosting environment.
 
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute to StaticWebFramework, please follow these guidelines:
+Contributions are welcome! If you'd like to contribute to SiteInC, please follow these guidelines:
 
 - Fork the repository
 - Create a new branch for your feature or fix: `git checkout -b feature-name`
