@@ -22,5 +22,6 @@ int route() {
 
     if (isroute("GET", "/")) return render_index();
 
-    else return static_routes();
+    //else return static_routes();
+    return render_404();
 }

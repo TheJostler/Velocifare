@@ -44,6 +44,7 @@ int http_respond() {
     snprintf(http1, 14, "HTTP/%s %03i\n", "1.1", http_status);
     put1(http1);
     put1("Server: siteinc.tego\r\n");
+    put1("Content-Type: text/html\r\n");
     put1("\r\n");
     return 0;
 }
