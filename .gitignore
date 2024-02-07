@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /build
-/views/static
+/views/static/*
 /routes/static-routes.c
 /dev
 .env
