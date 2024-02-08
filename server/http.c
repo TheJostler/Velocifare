@@ -42,8 +42,9 @@ int http_parse(char *packet) {
 int http_respond() {
     char http1[14];
     snprintf(http1, 14, "HTTP/%s %03i\n", "1.1", http_status);
-    put((char *[]){http1}, 1);
-    put((char *[]){"Server: siteinc.tego\r\n"}, 1);
-    put((char *[]){"\r\n"}, 1);
+    put1(http1);
+    put1("Server: siteinc.tego\r\n");
+    put1("Content-Type: text/html\r\n");
+    put1("\r\n");
     return 0;
 }

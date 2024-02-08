@@ -53,8 +53,7 @@ js:
 	@npm run build --prefix dev
 	@./configure.sh
 
-build:	./*
-	@make clean
+build:
 	@make image
 	@make js
 	@make

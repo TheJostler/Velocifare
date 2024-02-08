@@ -21,7 +21,6 @@ int put1(char *string) {
 
 // network.c calls for this function after receiving a tcp packet
 // here we need to start the http parser
-// at the moment it ignored the http packet entirely and replies with the homepage lol
 int next(int peer) {
         char packet[MAX_PKT];
         read(peer, packet, MAX_PKT);

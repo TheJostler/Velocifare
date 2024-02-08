@@ -1,10 +1,6 @@
-Great! Here's a sample README.md for your project:
-
----
-
 # SiteInC
 
-SiteInC is a C framework designed to empower web developers to build static websites and compile them into a single binary executable, bundled along with a lightweight web server. The goal is to enhance the speed and efficiency of web applications, making them more scalable and cost-effective.
+SiteInC is an experimental C framework aiming to empower web developers to build static websites and compile them into a single binary executable, bundled along with a lightweight web server. The goal is to enhance the speed and efficiency of web applications, making them more scalable and cost-effective.
 
 ## Features
 
@@ -44,7 +40,7 @@ Contributions are welcome! If you'd like to contribute to SiteInC, please follow
 
 ## License
 
-This project is licensed under the MIT License - see the [GNU General Public License](LICENSE) file for details.
+This project is licensed under the GNU General Public Licence - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
