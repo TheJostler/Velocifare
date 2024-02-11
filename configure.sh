@@ -6,14 +6,6 @@ dir="dev/build"
 echo "== Compiling your project =="
 echo ""
 
-function clearline {
-	printf "\r"
-	for i in {1..`tput cols`}
-	do
-		printf ' '
-	done
-}
-
 r="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 cd $dir
 if [ ! -d $r/views/static ]
@@ -27,7 +19,10 @@ fi
 header_file="$r/views/static/headers/views.h"
 static_routes="$r/routes/static-routes.c"
 
-echo "" > $header_file
+echo "#include <unistd.h>
+#include \"../../../server/headers/network.h\"
+#include \"../../../server/headers/kernel.h\"
+#include \"../../../server/headers/http.h\"" > $header_file
 
 echo "
 #include \"../views/static/headers/views.h\"
@@ -39,10 +34,11 @@ echo "
 int static_routes() {
 " > $static_routes
 
-find . -name *.js -o -name *.html -o -name *.css | while read f
+find . -name "*.js" -o -name "*.html" -o -name "*.css" | while read f
 do
     # Input and output file paths
     input_file="$f"
+    input_file_ext="$(echo $input_file | rev | cut -d '.' -f 1 | rev)"
     path=$(echo $f | tail -c +2)
     no_slash="$(echo ${path////_})"
     no_slash_dash="$(echo ${no_slash//-/_})"
@@ -50,15 +46,28 @@ do
     output_file="$r/views/static/$no_slash_dash.c"
     function_name=render_$no_dot
 
-    clearline
-    printf "\rCompiling - $path"
+    case $input_file_ext in
+        "html")
+            ftype="text/html"
+        ;;
+        "js")
+            ftype="text/javascript"
+        ;;
+        "css")
+            ftype="text/css"
+        ;;
+    esac
+
+    echo "Compiling - $path"
 
     echo "
-    #include <unistd.h>
-    #include \"../../server/headers/network.h\"
-    #include \"../../server/headers/kernel.h\"
+    #include \"headers/views.h\"
+    
 
     int $function_name() {
+        http_type=\"$ftype\";
+        http_respond();
+        
         char *page[] = {
         " > $output_file
     # Read each line from input file, add backslash before double quotes, wrap with double quotes, and write to output file
@@ -83,5 +92,4 @@ done
 # Finalize the the static routes file
 echo "http_status = 404;return render_404();}" >> $static_routes
 
-clearline
-printf "\rCompiling - done\n"
+echo "Compiling - done\n"

@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include "headers/http.h"
@@ -22,11 +23,11 @@ int put1(char *string) {
 // network.c calls for this function after receiving a tcp packet
 // here we need to start the http parser
 int next(int peer) {
-        char packet[MAX_PKT];
-        read(peer, packet, MAX_PKT);
-        http_parse(packet);
+	char packet[MAX_PKT];
+	read(peer, packet, MAX_PKT);
+	http_parse(packet);
 	//Obviously, later on we will implement controllers and middleware here
-        http_respond();
+	//http_respond();
 	return route();
 }
 

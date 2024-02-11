@@ -1,1 +1,16 @@
-
+#include <unistd.h>
+#include "../../../server/headers/network.h"
+#include "../../../server/headers/kernel.h"
+#include "../../../server/headers/http.h"
+int render__ode2ip_html();
+int render__index_html();
+int render___app_immutable_nodes_3_B6X0VLC7_js();
+int render___app_immutable_nodes_0_DMhiOUxU_js();
+int render___app_immutable_nodes_2_DU9imJ0g_js();
+int render___app_immutable_nodes_1_C8DW44hj_js();
+int render___app_immutable_entry_start_BUyTyp8K_js();
+int render___app_immutable_entry_app_BwXuVZU4_js();
+int render___app_immutable_chunks_scheduler_BvLojk_z_js();
+int render___app_immutable_chunks_entry_DFG6_kcb_js();
+int render___app_immutable_chunks_index_CDIhRLKe_js();
+int render___app_env_js();
