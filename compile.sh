@@ -70,14 +70,17 @@ do
         
         char *page[] = {
         " > $output_file
-    # Read each line from input file, add backslash before double quotes, wrap with double quotes, and write to output file
-    while IFS= read -r line; do
-        # Escape existing double quotes with a backslash
-        escaped_line=$(echo "$line" | sed 's/"/\\"/g')
-        # Wrap the line with double quotes
-        modified_line="\"$escaped_line\","
-        echo "$modified_line" >> "$output_file"
-    done < "$input_file"
+        
+        # Read each line from input file, escape backslash and double quotes, wrap with double quotes, and write to output file
+        while IFS= read -r line; do
+            # Escape backslashes with double backslashes
+            escaped_line0=$(printf "%s" "$line" | sed 's/\\/\\\\/g')
+            # Escape double quotes with backslash
+            escaped_line=$(printf "%s" "$escaped_line0" | sed 's/"/\\"/g')
+            # Wrap the line with double quotes
+            modified_line="\"$escaped_line\","
+            echo "$modified_line" >> "$output_file"
+        done < "$input_file"
 
     # Add the final part
     echo "};int n = sizeof(page)/sizeof(page[0]);return put(page, n);}" >> $output_file

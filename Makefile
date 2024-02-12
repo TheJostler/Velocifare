@@ -51,7 +51,7 @@ image:
 
 js:
 	@npm run build --prefix dev
-	@./configure.sh
+	@./compile.sh
 
 build:
 	@make image

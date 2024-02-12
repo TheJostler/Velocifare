@@ -10,7 +10,7 @@ int render_testjs() {
         "<body>",
         "<div id=\"test\"></div>",
         "</body>",
-        "<script src=\"/javatime.js\"></script>",
+        "<script src=\"/javatime.js\">Failed</script>",
         "</html>",
     };
 	int n = sizeof(page)/sizeof(page[0]);
