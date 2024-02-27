@@ -22,9 +22,6 @@ int route() {
     printf("%s: %s\n", HTTP_header.method, HTTP_header.path);
 
     if (isroute("GET", "/")) return render__index_html();
-    if (isroute("GET", "/ode2ip")) return render__ode2ip_html();
-    if (isroute("GET", "/testjs")) return render_testjs();
-    if (isroute("GET", "/javatime.js")) return render_javatime_js();
 
     else return static_routes();
     //return render_404();

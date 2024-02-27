@@ -31,8 +31,6 @@ int render_ode2ip() {
                 "<p>Where data flows freely, a symphony's start,</p>",
                 "<p>In the world of IP networking, let us find,</p>",
                 "<p>A modern ode to connectivity, one of a kind.</p>",
-                "<div id=\"test\"></div>",
-                "<script src=\"/javatime.js\"></script>",
             "</body>",
         "</html>",
     };

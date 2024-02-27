@@ -6,6 +6,7 @@
 #include "../routes/headers/routes.h"
 
 #define MAX_PKT 1500
+#define PORT 80
 
 int put(char **page, int n) {
 	for (int l=0; l<n; l++) {

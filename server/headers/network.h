@@ -9,7 +9,6 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 
-#define PORT 8080
 extern int peer;
 
 //int http(int peer);
