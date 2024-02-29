@@ -1,6 +1,7 @@
 #include "headers/views.h"
 
 int render_ode2ip() {
+    http_type = "text/html";
     http_respond();
     
     char *page[] = {

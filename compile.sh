@@ -42,9 +42,9 @@ do
     path=$(echo $f | tail -c +2)
     no_slash="$(echo ${path////_})"
     no_slash_dash="$(echo ${no_slash//-/_})"
-    no_dot="$(echo ${no_slash_dash//./_})"
+    no_dot="__$(echo ${no_slash_dash//./_} | tail -c +2)"
     output_file="$r/views/static/$no_slash_dash.c"
-    function_name=render_$no_dot
+    function_name=render$no_dot
 
     case $input_file_ext in
         "html")
@@ -68,22 +68,9 @@ do
         http_type=\"$ftype\";
         http_respond();
         
-        char *page[] = {
         " > $output_file
-        
-        # Read each line from input file, escape backslash and double quotes, wrap with double quotes, and write to output file
-        while IFS= read -r line; do
-            # Escape backslashes with double backslashes
-            escaped_line0=$(printf "%s" "$line" | sed 's/\\/\\\\/g')
-            # Escape double quotes with backslash
-            escaped_line=$(printf "%s" "$escaped_line0" | sed 's/"/\\"/g')
-            # Wrap the line with double quotes
-            modified_line="\"$escaped_line\","
-            echo "$modified_line" >> "$output_file"
-        done < "$input_file"
-
-    # Add the final part
-    echo "};int n = sizeof(page)/sizeof(page[0]);return put(page, n);}" >> $output_file
+	xxd --include $input_file >> $output_file
+	echo "write(peer, $no_dot, $no_dot""_len);return 0;}" >> $output_file
 
     # Register the function name in the static views header file
     echo "int $function_name();" >> $header_file
