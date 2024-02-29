@@ -51,13 +51,15 @@ image:
 
 js:
 	@npm run build --prefix dev
-	@./compile2.sh
+	@./compile.sh
 
 build:
 	@make image
 	@make js
 	@make
 
+rebuild: build
+	@make -B build
 clean:
 	rm -r $(build) $(name)
 	rm -r dev/build

@@ -1,6 +1,6 @@
 # SiteInC
 
-SiteInC is an experimental C framework aiming to empower web developers to build static websites and compile them into a single binary executable, bundled along with a lightweight web server. The goal is to enhance the speed and efficiency of web applications, making them more scalable and cost-effective.
+SiteInC is an experimental C framework aiming to empower web developers to build faster and more secure static websites. It works by compiling all the web site's source code into a single binary executable, bundled along with a lightweight web server. The goal is to enhance the speed and efficiency of web applications, making them more scalable and cost-effective.
 
 ## Features
 
@@ -16,7 +16,7 @@ To get started with SiteInC, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/TheJostler/siteinc`
 2. Navigate to the project directory: `cd siteinc`
-3. Build the project using the provided build script: `./build.sh`
+3. Build the project using the provided MakeFile: `make build`
 4. Run the compiled binary executable: `./sic`
 
 ## Usage
