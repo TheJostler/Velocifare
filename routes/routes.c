@@ -22,6 +22,7 @@ int route() {
     printf("%s: %s\n", HTTP_header.method, HTTP_header.path);
 
     if (isroute("GET", "/")) return render__index_html();
+    if (isroute("GET", "/ode2ip")) return render_ode2ip();
 
     else return static_routes();
     //return render_404();

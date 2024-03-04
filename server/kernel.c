@@ -26,7 +26,10 @@ int put1(char *string) {
 int next(int peer) {
 	char packet[MAX_PKT];
 	read(peer, packet, MAX_PKT);
-	http_parse(packet);
+	if(http_parse(packet)) {
+		printf("Strange packet ignored\n");
+		return 1;
+	}
 	//Obviously, later on we will implement controllers and middleware here
 	//http_respond();
 	return route();

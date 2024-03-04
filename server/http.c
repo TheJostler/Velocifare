@@ -3,25 +3,33 @@
 #include <stdio.h>
 #include "headers/kernel.h"
 
+#define false 0
+#define true 1
+
 // Define data structures for the application:
 struct http_header{
     char *method, *path, *protocol;
+    int accept_gzip;
     char *fields[100][2];
 };
 
 // This struct contains the HTTP request header information and makes it available globally
 struct http_header HTTP_header;
 // This int contain the HTTP Response Status code and is available globally(200 by default)
-int http_status = 200;
-char *http_type = "text/html";
+int http_status;
+char *http_type;
 
 int http_parse(char *packet) {
 
     // read line 1 and gether useful info
     int counter = 0;
-    HTTP_header.method = "Undefined";
-    HTTP_header.path = "Undefined";
-    HTTP_header.protocol = "Undefined";
+
+    http_status = 200;
+    http_type = "text/html";
+    HTTP_header.method = NULL;
+    HTTP_header.path = NULL;
+    HTTP_header.protocol = NULL;
+    HTTP_header.accept_gzip = false;
 
     char *packet_copy = strdup(packet);
 
@@ -39,6 +47,10 @@ int http_parse(char *packet) {
                 HTTP_header.protocol = line1;
                 break;
         }
+    }
+
+    if(HTTP_header.protocol == NULL || HTTP_header.path == NULL || HTTP_header.method == NULL) {
+	return 1;
     }
     
     // Reset strtok
@@ -84,10 +96,11 @@ int http_respond() {
     char http1[14];
     snprintf(http1, 14, "HTTP/%s %03i\n", "1.1", http_status);
     put1(http1);
-    put1("Server: siteinc.tego\r\n");
+    put1("Server: 192.168.137.115\r\n");
     put1("Content-Type: ");
-    put1(http_type);
-    put1("\r\n");
+    	put1(http_type);
+    	put1("\r\n");
+    put1("Cache-Control: public, max-age=31536000\r\n");
     put1("\r\n");
     return 0;
 }
