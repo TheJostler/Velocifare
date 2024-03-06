@@ -1,4 +1,4 @@
-name=sic
+name=velocifare
 cc=gcc
 flags=-Ofast
 build = build
