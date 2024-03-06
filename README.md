@@ -15,9 +15,11 @@ SiteInC is an experimental C framework aiming to empower web developers to build
 To get started with SiteInC, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/TheJostler/siteinc`
-2. Navigate to the project directory: `cd siteinc`
-3. Build the project using the provided MakeFile: `make build`
-4. Run the compiled binary executable: `./sic`
+2. Navigate to the project directory: `cd siteinc/dev`
+3. Install node packages for the demo app with: `npm install`
+4. Navigate back to the parent directory: `cd ..`
+5. Build the project using the provided MakeFile: `make build`/ `make rebuild` to force a rebuild
+6. Run the compiled binary executable: `./sic`
 
 ## Usage
 
