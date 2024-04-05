@@ -1,7 +1,6 @@
 <script>
     import Poem from './poem.svelte';
 
-  // Your Svelte component logic here
   let count = 0;
 
   function increment() {
