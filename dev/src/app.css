@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-gradient-to-b from-zinc-500 to-slate-600 min-h-screen text-gray-100
+}
+
+article {
+    @apply p-5 lg:p-20
+}
+
+h1 {
+}
+
+h2 { 
+    @apply m-5 text-lg lg:text-2xl
+}
+
+a {
+    @apply hover:text-emerald-100 hover:text-lg duration-100 delay-75
+}
+
+li {
+    @apply ml-5
+}
+
+p {
+    @apply mb-5
+}
+
+.code {
+    @apply bg-gray-700 font-mono ml-10
+}
+.header {
+    @apply p-10 bg-slate-700 text-lg lg:text-2xl
+}
+
+.tableofcontents {
+    @apply pb-10 lg:p-5
+}
+
+.bubble {
+    @apply bg-gradient-to-tr from-slate-500 to-zinc-400 rounded-lg p-10
+}

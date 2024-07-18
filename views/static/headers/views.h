@@ -1,0 +1,17 @@
+#include <unistd.h>
+#include "../../../server/headers/network.h"
+#include "../../../server/headers/kernel.h"
+#include "../../../server/headers/http.h"
+int render__index_html();
+int render__favicon_png();
+int render___app_immutable_nodes_1_Wo0qnt4t_js();
+int render___app_immutable_nodes_0_NiF_g7Rk_js();
+int render___app_immutable_nodes_2_Ccq_Ms5J_js();
+int render___app_immutable_entry_start_Z7uJFaW3_js();
+int render___app_immutable_entry_app_OqvEGSRe_js();
+int render___app_immutable_chunks_entry_JhLvkIYX_js();
+int render___app_immutable_chunks_scheduler_kAlY8CUs_js();
+int render___app_immutable_chunks_index_Pdin4oJ4_js();
+int render___app_immutable_assets__layout_n1LXSNZl_css();
+int render___app_immutable_assets_0_n1LXSNZl_css();
+int render___app_env_js();

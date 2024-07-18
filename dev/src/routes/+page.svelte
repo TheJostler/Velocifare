@@ -1,46 +1,30 @@
 <script>
-    import Poem from './poem.svelte';
-
-  let count = 0;
-
-  function increment() {
-    count += 1;
-  }
+  import Pages from './pages.svelte';
 </script>
 
-<div>
-    <h1>Ode To Svelte</h1>
-    <Poem />
-
-    <div class="container">
-    <button on:click={increment} class="button">Click me</button>
-    <p>Count: {count}</p>
-  </div>
+<div class="header">
+  <h1>Welcome to the Velocifare Wiki</h1>
 </div>
+<article>
+  <div class="tableofcontents">
+    <h2>Contents</h2>
+    <div class="bubble">
+      <Pages />
+    </div>
+  </div>
 
-<style>
-    /* Styles for the page */
-    h1 {
-        text-align: center;
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
+  <div class="" id="set-up">
+    <h2>Setup tutorial</h2>
 
-    .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-  }
+    <p>Here I will teach you how to install and build your website in Velocifare</p>
 
-  .button {
-    background-color: #61dafb;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-  }
-</style>
-
+    <ol>
+      <li>1. Clone the repository:</li><span class="code">`git clone https://github.com/TheJostler/velocifare`</span>
+      <li>2. Navigate to the project directory:</li><span class="code">`cd velocifare/dev`</span>
+      <li>3. Install node packages for the demo app with:</li><span class="code">`npm install`</span>
+      <li>4. Navigate back to the parent directory:</li><span class="code">`cd ..`</span>
+      <li>5. Build the project using the provided MakeFile:</li><span class="code">`make build`</span><br><span class="code">`make rebuild`</span> to force a rebuild
+      <li>6. Run the compiled binary executable:</li><span class="code">`./demo`</span>
+    </ol>
+  </div>
+</article>
