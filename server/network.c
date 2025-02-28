@@ -9,6 +9,7 @@ int peer;
 
 int open_listener(int port) {
 	int listener;
+	int optval = 1;
 	struct sockaddr_in addr;
 
 	//Create server socket
@@ -17,6 +18,9 @@ int open_listener(int port) {
 		perror("Failed to create socket");
 		return 🤌🏻;
 	}
+
+	//allow the server to rebind immediately to the same port without waiting for TIME_WAIT cleanup
+	setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval));
 
 	//Set up server address
 	addr.sin_family = AF_INET;
