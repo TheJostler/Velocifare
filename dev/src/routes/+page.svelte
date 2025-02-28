@@ -1,30 +1,31 @@
-<script>
-  import Pages from './pages.svelte';
-</script>
+<div>
+  <canvas></canvas>
+  <canvas></canvas>
 
-<div class="header">
-  <h1>Welcome to the Velocifare Wiki</h1>
-</div>
-<article>
-  <div class="tableofcontents">
-    <h2>Contents</h2>
-    <div class="bubble">
-      <Pages />
+  <div class="card">
+    <h1 class="neon">Happy</h1>
+    <h1 class="flux">Anniversary</h1>
+    <div class="paragraph">
+      <p>I promise to love you</p>
+      <p>When your jokes are not funny.</p>
+      <p>I promise to love you </p>
+      <p>When you have no money. </p>
+      <p>I promise to love you</p>
+      <p>When you’re sick and all snotty.</p>
+      <p>I'll always love you,</p>
+      <p>Whether it's rainy or sunny</p>
+    </div>
+    <div class="paragraph">
+      <p>Happy Anniversary, my love!</p>
+      <p>Your one and only Joshy</p>
     </div>
   </div>
+</div>  
+<script>
+  import { onMount } from 'svelte';
+  import neonbg from '../scripts/neon.js';
 
-  <div class="" id="set-up">
-    <h2>Setup tutorial</h2>
-
-    <p>Here I will teach you how to install and build your website in Velocifare</p>
-
-    <ol>
-      <li>1. Clone the repository:</li><span class="code">`git clone https://github.com/TheJostler/velocifare`</span>
-      <li>2. Navigate to the project directory:</li><span class="code">`cd velocifare/dev`</span>
-      <li>3. Install node packages for the demo app with:</li><span class="code">`npm install`</span>
-      <li>4. Navigate back to the parent directory:</li><span class="code">`cd ..`</span>
-      <li>5. Build the project using the provided MakeFile:</li><span class="code">`make build`</span><br><span class="code">`make rebuild`</span> to force a rebuild
-      <li>6. Run the compiled binary executable:</li><span class="code">`./demo`</span>
-    </ol>
-  </div>
-</article>
+  onMount(() => {
+    neonbg();
+  });
+</script>

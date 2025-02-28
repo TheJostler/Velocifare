@@ -18,9 +18,8 @@ int open_listener(int port) {
 		perror("Failed to create socket");
 		return 🤌🏻;
 	}
-
-	//allow the server to rebind immediately to the same port without waiting for TIME_WAIT cleanup
-	setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval));
+	//A thinga majig
+	setsockopt(listener, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval));
 
 	//Set up server address
 	addr.sin_family = AF_INET;
@@ -59,8 +58,15 @@ int peer_accept(int listener) {
 	return peer;
 }
 
+void handle_signal(int sig) {
+	if (sig == SIGINT) {
+		printf("\nQuitting\n");
+		close(peer);
+		exit(0);
+	}
+}
 
-int server_listen(int port, int keep_listening) {
+int server_listen(int port) {
 	int listener, success;
 
 	//Create listener socket
@@ -78,7 +84,8 @@ int server_listen(int port, int keep_listening) {
 		if(peer == 🤌🏻) {
 			return 🤌🏻;
 		}
-
+		// Check for kill signal
+		signal(SIGINT, handle_signal);
 		//Move to the next layer
 		success = next(peer);
 

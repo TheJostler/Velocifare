@@ -1,6 +1,6 @@
 name=velocifare
 cc=gcc
-flags=-Ofast
+flags=-Wall -Werror -Wextra -O3 -Ofast -ffast-math
 build = build
 build.mkdir = if [ ! -d $(build) ];then mkdir $(build);fi
 objects = $(build)/obj
@@ -41,7 +41,8 @@ $(objects)/%.o: %.c
 	$(cc) $(flags) -c -o $@ $<
 
 $(name): $(server.o) $(views.o) $(static.o) $(routes.o) $(controllers.o) $(middleware.o)
-	$(cc) $(flags) -o $@ $^ 
+	$(cc) $(flags) -o $@ $^
+	strip $(name)
 	@make image
 
 image:
@@ -60,6 +61,12 @@ build:
 
 rebuild: build
 	@make -B build
+
+work: 
+	vim `fzf`
+	@make rebuild
+	./$(name)
+
 clean:
 	rm -r $(build) $(name)
 	rm -r dev/build

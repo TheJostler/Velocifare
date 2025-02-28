@@ -36,5 +36,6 @@ int next(int peer) {
 }
 
 int kernel_start() {
-	return server_listen(PORT, 0);
+
+	return server_listen(PORT);
 }

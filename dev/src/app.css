@@ -1,45 +1,74 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-body {
-    @apply bg-gradient-to-b from-zinc-500 to-slate-600 min-h-screen text-gray-100
+* {
+  @apply m-0;
 }
 
-article {
-    @apply p-5 lg:p-20
+html, canvas {
+  @apply h-full;
+}
+
+body {
+  @apply bg-[#121212] h-screen;
+}
+
+canvas {
+  @apply fixed top-0 left-0 w-full h-full z-[-1];
+}
+
+body {
+  @apply bg-gradient-to-b from-slate-950 to-blue-950 text-white h-screen
 }
 
 h1 {
-}
-
-h2 { 
-    @apply m-5 text-lg lg:text-2xl
-}
-
-a {
-    @apply hover:text-emerald-100 hover:text-lg duration-100 delay-75
-}
-
-li {
-    @apply ml-5
+  @apply italic text-4xl font-bold opacity-100
 }
 
 p {
-    @apply mb-5
+  @apply text-lg
 }
 
-.code {
-    @apply bg-gray-700 font-mono ml-10
-}
-.header {
-    @apply p-10 bg-slate-700 text-lg lg:text-2xl
+.paragraph {
+  @apply p-5
 }
 
-.tableofcontents {
-    @apply pb-10 lg:p-5
+.card {
+  @apply justify-self-center mb-20 pt-10 pb-5 m-11 w-3/4 h-full bg-gradient-to-t from-slate-900 to-blue-950 rounded-3xl text-center opacity-75
 }
 
-.bubble {
-    @apply bg-gradient-to-tr from-slate-500 to-zinc-400 rounded-lg p-10
+@font-face {
+  font-family: neon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+.neon {
+  @apply font-bold text-[9vw] leading-[9vw] text-yellow-400 opacity-100;
+  text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+  animation: neon-glow 1s ease-in-out infinite alternate;
+  font-family: neon;
+}
+
+.flux {
+  @apply font-bold text-[9vw] leading-[9vw] text-cyan-400 opacity-100;
+  text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+  animation: flux-glow 1.5s ease-in-out infinite alternate;
+  font-family: neon;
+}
+
+@keyframes neon-glow {
+  0% {
+    text-shadow: 0 0 0.8vw #FA1C16, 0 0 2.5vw #FA1C16, 0 0 7vw #FA1C16, 0 0 7vw #FA1C16, 0 0 .3vw #FED128, .4vw .4vw .1vw #806914;
+  }
+  100% {
+    text-shadow: 0 0 1vw #800E0B, 0 0 3vw #800E0B, 0 0 9vw #800E0B, 0 0 9vw #800E0B, 0 0 .2vw #800E0B, .4vw .4vw .1vw #40340A;
+  }
+}
+
+@keyframes flux-glow {
+  0% {
+    text-shadow: 0 0 0.8vw #1041FF, 0 0 2.5vw #1041FF, 0 0 7vw #1041FF, 0 0 7vw #1041FF, 0 0 .3vw #8BFDFE, .4vw .4vw .1vw #147280;
+  }
+  100% {
+    text-shadow: 0 0 1vw #082180, 0 0 3vw #082180, 0 0 9vw #082180, 0 0 9vw #082180, 0 0 .2vw #082180, .4vw .4vw .1vw #0A3940;
+  }
 }

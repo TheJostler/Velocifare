@@ -8,12 +8,13 @@
 #include <string.h>
 #include <unistd.h>
 #include <arpa/inet.h>
+#include <signal.h>
 
 extern int peer;
 
 //int http(int peer);
 int open_listener(int port);
 int peer_accept(int listener);
-int server_listen(int port, int keep_listening);
+int server_listen(int port);
 
 #endif

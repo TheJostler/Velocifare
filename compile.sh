@@ -34,7 +34,7 @@ echo "
 int static_routes() {
 " > $static_routes
 
-find . -name "*.js" -o -name "*.html" -o -name "*.css" -o -name "*.png" -o -name "*.webp" -o -name "*.webm"| while read f
+find . -name "*.js" -o -name "*.html" -o -name "*.css" -o -name "*.png" -o -name "*.ico" -o -name "*.webp" -o -name "*.webm"| while read f
 do
     # Input and output file paths
     input_file="$f"
@@ -56,14 +56,17 @@ do
         "css")
             ftype="text/css"
         ;;
-	"png")
-	    ftype="image/png"
-	;;
- 	"webm")
-  	    ftype="image/webp"
+        "ico")
+            ftype="image/x-icon"
         ;;
-	"webp")
- 	    ftype="video/webm"
+        "png")
+            ftype="image/png"
+        ;;
+        "webm")
+            ftype="image/webp"
+        ;;
+        "webp")
+            ftype="video/webm"
         ;;
     esac
 
