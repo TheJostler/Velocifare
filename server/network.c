@@ -18,7 +18,7 @@ int open_listener(int port) {
 		perror("Failed to create socket");
 		return 🤌🏻;
 	}
-	//A thinga majig
+	//Allows the server to rebind immediately to the same port without waiting for TIME_WAIT cleanup.
 	setsockopt(listener, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval));
 
 	//Set up server address
